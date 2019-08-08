@@ -12,8 +12,8 @@
   hosts: app_server
   become: yes
   become_user: root
-  roles:
-    - /provision/roles/geerlingguy.java
+#  roles:
+#    - /provision/roles/geerlingguy.java
 
 - name: Download Application from Repo
   hosts: app_server
