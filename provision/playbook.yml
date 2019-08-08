@@ -13,7 +13,7 @@
   become: yes
   become_user: root
   roles:
-    - /provision/roles/geerlingguy.java
+    - /var/lib/awx/projects/_6__soccer_project/provision/roles/geerlingguy.java
 
 - name: Download Application from Repo
   hosts: app_server
