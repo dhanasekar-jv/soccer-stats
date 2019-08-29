@@ -11,15 +11,15 @@
 - name: Install Java
   hosts: app_server
 #  remote_user: "{{ ansible_ssh_user | default('vagrant') }}"
-  remote_user: vagrant
+#  remote_user: vagrant
   become: yes
-#  become_user: root
+  become_user: root
 #  roles:
 #    - /provision/roles/geerlingguy.java
 
 - name: Download Application from Repo
   hosts: app_server
-  remote_user: "{{ ansible_ssh_user | default('vagrant') }}"
+#  remote_user: "{{ ansible_ssh_user | default('vagrant') }}"
   tasks:
     - get_url:
         force: yes
