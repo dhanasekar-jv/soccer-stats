@@ -10,13 +10,15 @@
 
 - name: Install Java
   hosts: app_server
+  remote_user: "{{ ansible_ssh_user | default('vagrant') }}"
   become: yes
-  become_user: root
+#  become_user: root
 #  roles:
 #    - /provision/roles/geerlingguy.java
 
 - name: Download Application from Repo
   hosts: app_server
+  remote_user: "{{ ansible_ssh_user | default('vagrant') }}"
   tasks:
     - get_url:
         force: yes
@@ -27,8 +29,9 @@
 
 - name: Setup Spring Boot
   hosts: app_server
+  remote_user: "{{ ansible_ssh_user | default('vagrant') }}"
   become: yes
-  become_user: root
+#  become_user: root
   roles: 
     - { role: pellepelster.springboot-role,
         spring_boot_file: "{{ APP_NAME }}.war",
