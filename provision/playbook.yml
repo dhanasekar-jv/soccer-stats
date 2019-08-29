@@ -10,7 +10,8 @@
 
 - name: Install Java
   hosts: app_server
-  remote_user: "{{ default('vagrant') }}"
+#  remote_user: "{{ ansible_ssh_user | default('vagrant') }}"
+  remote_user: vagrant
   become: yes
 #  become_user: root
 #  roles:
