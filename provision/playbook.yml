@@ -23,10 +23,10 @@
   tasks:
     - get_url:
         force: yes
-        url: "{{ ARTIFACT_URL }}"
-        dest: "/tmp/{{ APP_NAME }}.war"
+        url: "{{ env.ARTIFACT_URL }}"
+        dest: "/tmp/{{ env.APP_NAME }}.war"
     - stat: 
-        path: "/tmp/{{ APP_NAME }}.war"
+        path: "/tmp/{{ env.APP_NAME }}.war"
 
 - name: Setup Spring Boot
   hosts: app_server
